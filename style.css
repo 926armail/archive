@@ -1,0 +1,38 @@
+:root{
+  --bg: var(--tg-theme-secondary-bg-color, #f3f4f2);
+  --card: var(--tg-theme-bg-color, #ffffff);
+  --text: var(--tg-theme-text-color, #1d2321);
+  --muted: var(--tg-theme-hint-color, #66706c);
+  --accent: var(--tg-theme-button-color, #1f6f5c);
+  --accent-text: var(--tg-theme-button-text-color, #ffffff);
+  --line: color-mix(in srgb, var(--text) 12%, transparent);
+  --radius: 12px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.4}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+.head h1{font-size:22px;margin:0 0 4px;font-weight:700}
+.sub{margin:0 0 16px;color:var(--muted);font-size:14px}
+.panel{background:var(--card);border-radius:var(--radius);padding:16px;display:grid;gap:12px;border:1px solid var(--line)}
+.field{display:grid;gap:4px}
+.field span{font-size:13px;color:var(--muted);font-weight:600}
+select,input{width:100%;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px}
+select:disabled{opacity:.5}
+select:focus,input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.reset{justify-self:start;background:none;border:0;color:var(--accent);font:inherit;font-weight:600;padding:6px 0;cursor:pointer}
+.count{color:var(--muted);font-size:14px;margin:18px 2px 8px}
+.results{display:grid;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.addr{display:flex;gap:6px}
+.cell{background:var(--accent);color:var(--accent-text);border-radius:10px;padding:6px 10px;text-align:center;min-width:58px}
+.cell b{display:block;font-size:20px;line-height:1.1;font-variant-numeric:tabular-nums}
+.cell small{font-size:11px;opacity:.85}
+.info .t{font-weight:600}
+.info .m{color:var(--muted);font-size:14px;margin-top:2px}
+.empty{background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);padding:20px;text-align:center;color:var(--muted)}
+@media (max-width:480px){
+  .card{grid-template-columns:1fr}
+  .cell{flex:1}
+}

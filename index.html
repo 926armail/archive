@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Поиск папки в архиве</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="head">
+    <h1 id="title">Поиск папки в архиве</h1>
+    <p class="sub" id="status">Загрузка реестра…</p>
+  </header>
+
+  <section class="panel" aria-label="Параметры поиска">
+    <label class="field">
+      <span>Организация</span>
+      <select id="f-org"><option value="">Все организации</option></select>
+    </label>
+    <label class="field">
+      <span>Вид документов</span>
+      <select id="f-type"><option value="">Все виды</option></select>
+    </label>
+    <div class="row2">
+      <label class="field">
+        <span>Год</span>
+        <select id="f-year"><option value="">Любой</option></select>
+      </label>
+      <label class="field">
+        <span>Месяц</span>
+        <select id="f-month" disabled><option value="">Весь год</option></select>
+      </label>
+    </div>
+    <label class="field">
+      <span>Поиск по тексту</span>
+      <input id="f-q" type="search" placeholder="например: займ, счёт 62, поручения" autocomplete="off">
+    </label>
+    <button id="reset" class="reset" type="button">Сбросить</button>
+  </section>
+
+  <section aria-live="polite">
+    <p class="count" id="count"></p>
+    <div id="results" class="results"></div>
+  </section>
+</main>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
